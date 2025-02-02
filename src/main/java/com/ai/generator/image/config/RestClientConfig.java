@@ -10,8 +10,8 @@ public class RestClientConfig {
     @Bean
     public RestClient restClient() {
         return RestClient.builder()
-                .baseUrl("https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large")
-                .defaultHeader("Authorization", "Bearer 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")
+                .baseUrl(System.getenv("STABLE_DIFFUSION_URL"))
+                .defaultHeader("Authorization", "Bearer "+System.getenv("HUGGING_FACE_API_KEY"))
                 .build();
     }
 
